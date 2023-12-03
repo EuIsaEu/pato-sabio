@@ -1,0 +1,99 @@
+
+#login{
+    width: 75vw;
+    height: 110vw;
+    margin-top: 20vw;
+    border-radius: 5vw;
+    color: white;
+    background-color: var(--var-azul);
+}
+
+#logo{
+    width: 100%;
+    height: 35%;
+    padding-top: 5%;
+    border-radius: 2vw 2vw 0 0;
+    /* background-color: black; */
+    display: flex;
+    flex-direction: column;
+}
+
+#logoImg{
+    width: 30vw;
+    background-color: white;
+    border-radius: 100%;
+}
+
+#nome{
+    width: 100%;
+    height: 15%;
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#nome p{
+    margin-bottom: 2vw;
+    font-size: 4vw;
+}
+#nome input{
+    width: 40vw;
+    height: 5vw;
+}
+
+#senha{
+    width: 100%;
+    height: 15%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#senha p{
+    margin-bottom: 2vw;
+    font-size: 4vw;
+}
+#senha input{
+    width: 40vw;
+    height: 5vw;
+}
+
+#button{
+    width: 100%;
+    height: 10%;
+    
+    /* background-color: green; */
+    border-radius: 0 0 2vw 2vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#button button{
+    width: 20vw;
+    height: 7vw;
+    border-radius: 2vw;
+    font-size: 3vw;
+    background-color: var(--var-azul-escuro);
+    color: white;
+    border-style: none;
+}
+
+#cadastre{
+    width: 50%;
+    height: 10%;
+    /* background-color: black; */
+    display: flex;
+    flex-direction: column;
+    font-size: 2.5vw;
+    text-align: center;
+}
+#cadastre a{
+    color: white;
+    text-decoration: underline;
+}
+
+@media (min-width:720px){
+
+
+
+}
