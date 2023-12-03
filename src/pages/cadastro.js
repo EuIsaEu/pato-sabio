@@ -30,7 +30,7 @@ export default function cadastro() {
                     <button>cadastrar</button>
                 </div>
                 <div id={styles.entrar}>
-                    <p>Já possui uma conta? <a href='/cadastro'>Entre aqui</a> </p>
+                    <p>Já possui uma conta? <a href='/login'>Entre aqui</a> </p>
                 </div>
             </div>
         </>
