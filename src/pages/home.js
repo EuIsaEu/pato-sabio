@@ -41,11 +41,11 @@ export default function App() {
         });
     });
   }, [])
-  
+
 
   return (
     <div className={styles.App}>
-      <Header/>
+      <Header />
       <input type="file" onChange={(event) => { setImageUpload(event.target.files[0]) }} />
       <button onClick={uploadImage}>Upload Image</button>
       <a href='/login'>Login</a>

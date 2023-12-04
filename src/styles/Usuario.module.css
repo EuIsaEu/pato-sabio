@@ -1,0 +1,60 @@
+#usuarioDados {
+    width: 100%;
+    height: 70vw;
+    padding-top: 5vw;
+    background-color: var(--var-azul);
+    display: flex;
+}
+
+#pfpNome{
+    width: 70%;
+    min-height: 20vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#fotoCam{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#pfp{
+    width: 35vw;
+    height: 35vw;
+    border: 1vw solid var(--var-ciano-claro);
+    background-color: white;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+#escolherImg{
+    color: transparent;
+    width: 50%;
+    height: 50%;
+    top: 1%;
+    left: 25%;
+    border-radius: 100%;
+    position: absolute;
+    display: flex;
+}
+#escolherImg{
+    font-size: 1vw;
+    text-decoration: none;
+}
+#escolherImg::-webkit-file-upload-button{
+    visibility: hidden;
+}
+
+
+#nome{
+    margin-top: 2vw;
+    font-size: 4vw;
+}
+
+#recado{
+    font-size: 2.5vw;
+}
+
+

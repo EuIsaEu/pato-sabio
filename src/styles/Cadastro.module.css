@@ -3,6 +3,7 @@
     width: 75vw;
     height: 110vw;
     margin-top: 20vw;
+    margin-bottom: 10vw;
     border-radius: 5vw;
     color: white;
     background-color: var(--var-azul);
@@ -24,9 +25,14 @@
     border-radius: 100%;
 }
 
+#dados{
+    margin-bottom: 2vw;
+}
+
 #inputsTexts{
     width: 100%;
     height: 15%;
+    margin-bottom: 2vw;
     /* background-color: red; */
     display: flex;
     align-items: center;
@@ -56,8 +62,13 @@
     font-size: 3vw;
     border-radius: 2vw;
     background-color: var(--var-azul-escuro);
+    cursor: pointer;
     color: white;
     border-style: none;
+}
+#button button:active{
+    background-color: var(--ciano-claro);
+    box-shadow: 0 0 5px 0 var(--var-roxo);
 }
 
 #entrar{
