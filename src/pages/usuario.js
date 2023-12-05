@@ -13,7 +13,6 @@ export function usuario() {
 
     function enviar(file) {
 
-        console.log(file)
         const db = getDatabase(App);
         const imageRef = storageRef(storage, `usuarios/${file.name + v4()}`);
         const storedUser = localStorage.getItem('userID');
@@ -92,6 +91,9 @@ export function usuario() {
                         <p id={styles.recado}>Um pato sábio</p>
                     </div>
                 )}
+            </div>
+            <div id={styles.posts}>
+                
             </div>
         </>
     )

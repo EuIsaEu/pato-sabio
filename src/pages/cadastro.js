@@ -12,6 +12,7 @@ export default function cadastro() {
         const registroAcad = document.getElementById('ra').value;
         const nome = document.getElementById('nome').value;
         const senha = document.getElementById('senha').value;
+        const picUrl = 'https://firebasestorage.googleapis.com/v0/b/sage-duck.appspot.com/o/usuarios%2Fpato.png?alt=media&token=7917d820-f228-41e8-aa38-073ca8831b9e';
 
         if (registroAcad !== '' && nome !== '' && senha.lenght !== '') {
             const db = getDatabase(App);
@@ -24,7 +25,7 @@ export default function cadastro() {
                             id: registroAcad,
                             nome: nome,
                             senha: senha,
-                            profilePicUrl: 'https://firebasestorage.googleapis.com/v0/b/sage-duck.appspot.com/o/usuarios%2Fpato.png?alt=media&token=7917d820-f228-41e8-aa38-073ca8831b9e'
+                            profilePicUrl: picUrl
                         }
                         const db = getDatabase();
                         set(ref(db, 'usuarios/' + registroAcad), data);
