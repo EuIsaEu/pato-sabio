@@ -1,8 +1,9 @@
-import { App } from "./api/firebase";
-import { storage } from "./api/firebase";
+import Head from 'next/head';
 import { useEffect, useRef, useState } from 'react';
 import styles from '../styles/Usuario.module.css';
-import Head from 'next/head';
+
+import { App } from "./api/firebase";
+import { storage } from "./api/firebase";
 
 import { ref, get, getDatabase, set, update } from "firebase/database";
 import { ref as storageRef, uploadBytes, getDownloadURL } from "firebase/storage";
