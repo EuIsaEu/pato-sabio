@@ -6,13 +6,33 @@ import { App } from "./api/firebase";
 import { storage } from "./api/firebase";
 
 import { ref, get, getDatabase, set, update } from "firebase/database";
-import { ref as storageRef, uploadBytes, getDownloadURL } from "firebase/storage";
-import { v4 } from 'uuid';
 
 
 export default function feed() {
 
     const [userData, setUserData] = useState(null);
+
+    function criarSala() {
+        const db = getDatabase(App);
+        const storedUser = localStorage.getItem('userID');
+        const nomeSala = prompt('nome sala');
+        const dbRef = ref(db, 'salas/' + nomeSala);
+
+        get(dbRef).then((snapshot) => {
+            if (!snapshot.exists()) {
+                materiaSala = prompt('qual a materia da sala?')
+                const salaInfo = {
+                    nome: nomeSala,
+                    materia: materiaSala,
+                    criadorID: storedUser
+                }
+                set(ref(db, 'salas/' + nomeSala), salaInfo);
+            } else {
+                alert('nome de sala já em uso')
+            }
+        })
+
+    }
 
     useEffect(() => {
         const fetchUserData = () => {
@@ -32,7 +52,7 @@ export default function feed() {
 
                         } else {
                             console.log('usuario não existe')
-                            window.location.href = '/registro';
+                            window.location.href = '/cadastro';
                         }
                     })
                 } else {
@@ -52,16 +72,17 @@ export default function feed() {
                 <title>Feed</title>
             </Head>
             <div id={styles.sideBar}>
-            {userData&&(
-                <div id={styles.profile}>
-                    <img src={userData.profilePicUrl} id={styles.pfp}></img>
-                </div>
-            )}
-            <div id={styles.criarSala}></div>    
+                {userData && (
+                    <div id={styles.profile}>
+                        <img src={userData.profilePicUrl} id={styles.pfp}></img>
+                    </div>
+                )}
+                <p id={styles.criarSala} onClick={criarSala}>Criar nova sala</p>
+
                 <div id={styles.sala}></div>
             </div>
             <div id={styles.contend}>
-                
+
             </div>
         </div>
     )

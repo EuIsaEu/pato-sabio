@@ -27,7 +27,6 @@ export default function cadastro() {
                             senha: senha,
                             profilePicUrl: picUrl
                         }
-                        const db = getDatabase();
                         set(ref(db, 'usuarios/' + registroAcad), data);
                         localStorage.setItem('userID', data.id);
 
