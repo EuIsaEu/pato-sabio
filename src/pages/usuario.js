@@ -42,6 +42,38 @@ export function usuario() {
         })
     }
 
+    function mudarStatus() {
+        const novoStatus = prompt('digite novo status')
+
+        try {
+            const storedUser = localStorage.getItem('userID');
+            if (storedUser) {
+                const userID = storedUser;
+
+                const db = getDatabase(App);
+                const userRef = ref(db, 'usuarios/' + userID);
+
+                get(userRef).then((snapshot) => {
+
+                    if (novoStatus != null) {
+                        const data = snapshot.val();
+                        data.status = novoStatus;
+                        set(ref(db, 'usuarios/' + storedUser), data);
+                        location.reload()
+
+                    } else {
+
+                    }
+                })
+            } else {
+                window.location.href = '/login'
+            }
+        } catch (error) {
+            console.error('Erro ao buscar dados do usuário:', error);
+        }
+
+    }
+
     useEffect(() => {
         const fetchUserData = () => {
 
@@ -82,6 +114,7 @@ export function usuario() {
                 )}
             </Head>
             <div id={styles.usuarioDados}>
+                <a href='/feed' id={styles.feed}>Acessar feed</a>
                 {userData && (
                     <div id={styles.pfpNome}>
                         <div id={styles.fotoCam}>
@@ -89,12 +122,12 @@ export function usuario() {
                             <input id={styles.escolherImg} type='file' onChange={(event) => { enviar(event.target.files[0]) }} ></input>
                         </div>
                         <p id={styles.nome}>{userData.nome}</p>
-                        <p id={styles.recado}>Um pato sábio</p>
+                        <p onClick={mudarStatus} id={styles.recado}>{userData.status}</p>
                     </div>
                 )}
             </div>
             <div id={styles.posts}>
-                
+
             </div>
         </>
     )

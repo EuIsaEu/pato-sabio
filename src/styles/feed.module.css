@@ -9,24 +9,34 @@
 #contend{
     width: 80%;
     min-height: 80vw;
+    padding-top: 10vw;
 }
 
 #sideBar{
     width: 20%;
-    min-height: 80vw;
+    min-height: 100vw;
     background-color: var(--var-azul)
 }
 
 #profile{
-    width: 15vw;
-    height: 15vw;
-    margin: 2vw auto 4vw auto;
+    width: 20vw;
+    height: 20vw;
+    margin: 2vw auto 5vw auto;
+    text-align: center;
+}
+
+#profile a{
+    font-size: 2.5vw;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
 }
 
 #pfp{
-    width: 100%;
-    height: 100%;
+    width: 17vw;
+    height: 17vw;
     border-radius: 100%;
+    object-fit: cover;
 }
 
 #criarSala{
@@ -34,7 +44,7 @@
     height: 4vw;
     font-size: 2vw;
     margin-bottom: 5vw;
-    padding: 1vw 0 0 0;
+    padding: 1.5vw 0 0 0;
     border-radius: 2vw;
     background-color: var(--var-ciano-claro);
     color: white;
@@ -47,3 +57,8 @@
     background-color: var(--var-ciano);
 }
 
+.posts{
+    width: 70%;
+    height: 30vw;
+    background-color: white;
+}

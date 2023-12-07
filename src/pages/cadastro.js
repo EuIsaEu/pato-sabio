@@ -30,7 +30,7 @@ export default function cadastro() {
                         set(ref(db, 'usuarios/' + registroAcad), data);
                         localStorage.setItem('userID', data.id);
 
-                        window.location.href = '/'
+                        window.location.href = '/usuario'
 
                     } else {
                         console.log('usuario ja existe')

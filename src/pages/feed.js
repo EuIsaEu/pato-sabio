@@ -6,6 +6,7 @@ import { App } from "./api/firebase";
 import { storage } from "./api/firebase";
 
 import { ref, get, getDatabase, set, update } from "firebase/database";
+import { async } from '@firebase/util';
 
 
 export default function feed() {
@@ -20,7 +21,7 @@ export default function feed() {
 
         get(dbRef).then((snapshot) => {
             if (!snapshot.exists()) {
-                materiaSala = prompt('qual a materia da sala?')
+                const materiaSala = prompt('qual a materia da sala?')
                 const salaInfo = {
                     nome: nomeSala,
                     materia: materiaSala,
@@ -31,12 +32,10 @@ export default function feed() {
                 alert('nome de sala já em uso')
             }
         })
-
     }
 
     useEffect(() => {
         const fetchUserData = () => {
-
             try {
                 const storedUser = localStorage.getItem('userID');
                 if (storedUser) {
@@ -61,8 +60,7 @@ export default function feed() {
             } catch (error) {
                 console.error('Erro ao buscar dados do usuário:', error);
             }
-        };
-
+        }
         fetchUserData();
     }, []);
 
@@ -74,15 +72,23 @@ export default function feed() {
             <div id={styles.sideBar}>
                 {userData && (
                     <div id={styles.profile}>
-                        <img src={userData.profilePicUrl} id={styles.pfp}></img>
+                        <a href='/usuario'>
+                            <img src={userData.profilePicUrl} id={styles.pfp}></img>
+                            <p>{userData.nome}</p>
+                        </a>
                     </div>
                 )}
                 <p id={styles.criarSala} onClick={criarSala}>Criar nova sala</p>
-
-                <div id={styles.sala}></div>
+                <div id={styles.sala}>
+                    <h3></h3>
+                    <p></p>
+                </div>
             </div>
             <div id={styles.contend}>
-
+                <div className={styles.posts}>
+                    <p></p>
+                    <img></img>
+                </div>
             </div>
         </div>
     )

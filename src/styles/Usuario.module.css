@@ -4,11 +4,21 @@
     padding-top: 5vw;
     background-color: var(--var-azul);
     display: flex;
+    flex-direction: column;
+}
+
+#feed{
+    font-size: 3vw;
+    font-weight: 600;
+    margin-left: 5vw;
+    text-decoration: none;
+    color: white;
 }
 
 #pfpNome{
     width: 70%;
     min-height: 20vw;
+    color: white;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -23,9 +33,10 @@
 #pfp{
     width: 35vw;
     height: 35vw;
+    border-radius: 100%;
     border: 1vw solid var(--var-ciano-claro);
     background-color: white;
-    border-radius: 100%;
+    object-fit: cover;
     overflow: hidden;
 }
 
@@ -51,6 +62,7 @@
 #nome{
     margin-top: 2vw;
     font-size: 4vw;
+    font-weight: 600;
 }
 
 #recado{
